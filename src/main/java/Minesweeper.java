@@ -8,7 +8,7 @@ public class Minesweeper {
     private boolean m_playing;
     private Random r;
 
-    private void StartGame(int x, int y) {
+    public void StartGame(int x, int y) {
         //Create random mines
         SetRandomMines(x, y);
         //Save number of nearby mines for each cell
@@ -31,7 +31,6 @@ public class Minesweeper {
     private void SetRandomMines(int x, int y) {
         int width = board.GetWidth();
         int height = board.GetHeight();
-
 
         for(int i = 0; i < m_numMines; i++) {
             boolean set = false;
@@ -134,6 +133,19 @@ public class Minesweeper {
                 }
             }
         }
+    }
+
+    public int MinesLeft() {
+        int total = 0;
+        for(int i = 0; i < board.GetHeight(); i++) {
+            for(int j = 0; j < board.GetWidth(); j++) {
+                Cell cell = board.GetCell(j, i);
+                if(cell.IsMine()) {
+                    total += 1;
+                }
+            }
+        }
+        return total;
     }
 
     public int GetBoardWidth() {
