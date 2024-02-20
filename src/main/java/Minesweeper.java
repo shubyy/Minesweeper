@@ -124,17 +124,6 @@ public class Minesweeper {
         m_allCellsRevealed = true;
     }
 
-    public void RevealAllMines() {
-        for(int i = 0; i < board.GetHeight(); i++) {
-            for(int j = 0; j < board.GetWidth(); j++) {
-                Cell cell = board.GetCell(j, i);
-                if(cell.IsMine()) {
-                    cell.Reveal();
-                }
-            }
-        }
-    }
-
     public int MinesLeft() {
         int total = 0;
         for(int i = 0; i < board.GetHeight(); i++) {
