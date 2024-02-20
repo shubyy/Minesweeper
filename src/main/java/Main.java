@@ -6,6 +6,6 @@ import javax.swing.JTextField;
 
 public class Main {
     public static void main(String[] args) {
-        MinesweeperInit mInit = new MinesweeperInit();
+        new MinesweeperInit();
     }
 }

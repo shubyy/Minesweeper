@@ -16,4 +16,21 @@ public class CellTest {
         testCell.SetMine();
         Assertions.assertTrue(testCell.IsMine());
     }
+
+    @Test
+    public void testCellFlag() {
+        Cell testCell = new Cell();
+        testCell.ToggleFlag();
+        Assertions.assertTrue(testCell.IsFlagged());
+        testCell.ToggleFlag();
+        Assertions.assertFalse(testCell.IsFlagged());
+    }
+
+    @Test
+    public void testCellNearbyMines() {
+        Cell testCell = new Cell();
+        Assertions.assertEquals(testCell.GetNumberOfNearbyMines(), 0);
+        testCell.SetNearbyMines(5);
+        Assertions.assertEquals(testCell.GetNumberOfNearbyMines(), 5);
+    }
 }

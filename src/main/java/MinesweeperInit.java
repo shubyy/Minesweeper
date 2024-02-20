@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 
 public class MinesweeperInit implements ActionListener {
-    private Minesweeper game;
     private JFrame paramFrame;
     private JPanel panel;
 
@@ -58,7 +57,7 @@ public class MinesweeperInit implements ActionListener {
             if(numMines >= (width * height) ) {
                 JOptionPane.showMessageDialog(null, "Too many mines!", "Error", JOptionPane.INFORMATION_MESSAGE);
             } else {
-                MinesweeperUI gameUI = new MinesweeperUI(width, height, numMines);
+                new MinesweeperUI(width, height, numMines);
             }
             
         } catch (NumberFormatException exp) {

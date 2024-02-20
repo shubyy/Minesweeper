@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
 public class Board {
-    ArrayList<Cell> CellBoard = new ArrayList<Cell>();
+    ArrayList<Cell> CellBoard;
     private int m_width;
     private int m_height;
 
     public void CreateBoard(int width, int height) {
-        int totalCells = width * height;
+        CellBoard = new ArrayList<Cell>();
         for(int i = 0; i < height; i++) {
             for(int j = 0; j < width; j++) {
                 CellBoard.add( new Cell() );

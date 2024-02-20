@@ -6,6 +6,7 @@ public class Minesweeper {
     private boolean m_allCellsRevealed;
     private boolean m_mineRevealed;
     private boolean m_playing;
+    private Random r;
 
     private void StartGame(int x, int y) {
         //Create random mines
@@ -30,7 +31,7 @@ public class Minesweeper {
     private void SetRandomMines(int x, int y) {
         int width = board.GetWidth();
         int height = board.GetHeight();
-        Random r = new Random();
+
 
         for(int i = 0; i < m_numMines; i++) {
             boolean set = false;
@@ -147,5 +148,6 @@ public class Minesweeper {
         board = new Board(width, height);
         m_numMines = numMines;
         m_playing = false;
+        r = new Random();
     }
 }
